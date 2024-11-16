@@ -8,7 +8,7 @@ else
 fi
 
 SCRIPT_NAME="map"
-SCRIPT_URL="https://raw.githubusercontent.com/anlaki-py/map/main/map.sh"
+SCRIPT_URL="https://raw.githubusercontent.com/anlaki-py/map/main/src/map.sh"
 
 # Function to download and install the script
 install_script() {
