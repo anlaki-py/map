@@ -7,7 +7,7 @@ curl -sSL https://raw.githubusercontent.com/anlaki-py/map/main/setup.sh | sudo b
 
 ### setup for termux
 ```
-curl -sSL https://raw.githubusercontent.com/anlaki-py/map/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/anlaki-py/map/main/setup.sh | bash
 ```
 
 ### usage
