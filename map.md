@@ -3,8 +3,10 @@
 ```
 /map
 ├── LICENSE
-├── install.sh
+├── commit.sh
 ├── map.md
-└── map.sh
+├── map.sh
+├── pull.sh
+└── setup.sh
 
 ```
