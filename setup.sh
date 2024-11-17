@@ -32,15 +32,9 @@ if [ -f "$INSTALL_DIR/$SCRIPT_NAME" ]; then
     echo "1) Overwrite with the new version"
     echo "2) Uninstall"
     echo "3) Cancel"
-    
-    # Check if the script is running interactively
-    if [ -t 0 ]; then
-        read -p "Enter your choice (1-3): " choice
-    else
-        # If not interactive, default to overwriting
-        echo "Non-interactive mode detected. Defaulting to overwrite."
-        choice=1
-    fi
+
+    # Use /dev/tty to read user input correctly when using sudo
+    read -p "Enter your choice (1-3): " choice < /dev/tty
 
     case $choice in
         1)
