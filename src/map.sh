@@ -7,7 +7,7 @@ create_tree() {
     local output=""
 
     # List all files and directories, sorted alphabetically, excluding .git and __pycache__
-    local items=($(ls -1A "$dir" | grep -vE '^(.git|__pycache__)$' | sort))
+    local items=($(ls -1A "$dir" | grep -vE '^(.git|__pycache__|.other|.old|cache|tmp|temp)$' | sort))
 
     for ((i=0; i<${#items[@]}; i++)); do
         local item="${items[$i]}"
