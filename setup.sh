@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # Detect if running on Termux
 if [ "$TERMUX_APP__PACKAGE_NAME" = "com.termux" ]; then
