@@ -10,10 +10,8 @@ TMP_FILE=$(mktemp)
 
 # Detect if running on Termux
 if [[ -n "${TERMUX_APP_PACKAGE:-}" ]]; then
-    # Running in Termux
     INSTALL_DIR="${PREFIX}/bin"
 else
-    # Running in regular Linux
     INSTALL_DIR="/usr/local/bin"
 fi
 
@@ -100,7 +98,7 @@ uninstall_script() {
     echo -e "${GREEN}${BOLD}Success:${RESET} ${SCRIPT_NAME} has been removed"
 }
 
-# User interaction
+# User interaction (fixed to use /dev/tty)
 prompt_user() {
     echo -e "${YELLOW}${SCRIPT_NAME} is already installed.${RESET}"
     echo "1) Update to latest version"
@@ -108,7 +106,8 @@ prompt_user() {
     echo "3) Cancel installation"
     
     while true; do
-        read -rp "${BOLD}Enter choice [1-3]: ${RESET}" choice
+        # Read input from the terminal, not stdin
+        read -rp "${BOLD}Enter choice [1-3]: ${RESET}" choice </dev/tty
         case "$choice" in
             1) install_script; break ;;
             2) uninstall_script; break ;;
