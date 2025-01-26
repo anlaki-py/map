@@ -181,7 +181,7 @@ handle_update() {
     fi
 
     # Verify downloaded script
-    if ! head -n 1 "$TEMP_FILE" | grep -q '^#!/bin/env bash'; then
+    if ! head -n 1 "$TEMP_FILE" | grep -q '^#!/usr/bin/env bash'; then
         echo "Invalid script downloaded" >&2
         rm "$TEMP_FILE"
         exit 1
